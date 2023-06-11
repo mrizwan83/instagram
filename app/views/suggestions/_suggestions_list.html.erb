@@ -1,4 +1,4 @@
-<div class="border" style="width: 20rem;">
+<div style="width: 20rem;">
 
     <div class="d-flex flex-row justify-content-between">
         <p class="text-muted fw-bold">Suggestions For You</p>
@@ -7,8 +7,10 @@
         <% end %>
     </div>
 
-    <div>
+    <div class="d-flex flex-column gap-3 px-2">
+        <% (0..5).each do %>
         <%= render 'suggestions/suggestion' %>
+        <% end %>
     </div>
 
 </div>
