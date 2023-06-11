@@ -7,7 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="d-flex">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
         <form class="d-flex" role="search">
             <input class="form-control me-2 border-0" type="search" placeholder="Search" aria-label="Search" style="background: #efefef">
         </form>
@@ -24,7 +24,13 @@
             <% end %>
             <i class="fa-regular fa-compass fa-xl"></i>
             <i class="fa-regular fa-heart fa-xl"></i>
+            <% if current_user && current_user.profile_pic.attached? %>
+                <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 2rem" %>
+            <% else %>
+                <%= image_tag 'user-pp.png', class: "img-thumbnail rounded-circle", style: "width: 2rem" %>
+            <% end %>
         </div>
+
     </div>
   </div>
 </nav>
