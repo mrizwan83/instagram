@@ -3,7 +3,12 @@
 
 <div class="card" style="width: 18rem;">
 
-<div class="card-header">
+<div class="card-header bg-white">
+  <% if post.user.profile_pic.attached? %>
+     <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 10%" %>
+  <% else %>
+        <%= image_tag 'user-pp.png', class: "img-thumbnail rounded-circle", style: "width: 10%" %>
+  <% end %>
     <%= post.user.username %>
   </div>
 
