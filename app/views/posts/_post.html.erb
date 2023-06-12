@@ -58,6 +58,8 @@
         <% end %>
       </div>
     </div>
+    <%# below is the post actions partial for the post (like comments etc.) %>
+    <%= render 'posts/post_actions', post: post %>
     <p class="card-text"><span class="fw-bold"><%= post.user.username %></span> <%= post.caption %></p>
 
     <small class="text-muted"><%= time_ago_in_words(post.created_at) %></small>
