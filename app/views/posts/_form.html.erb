@@ -50,13 +50,18 @@
             </div>
 
             <div>
-              <%= form.label :allow_comments, style: "display: block" %>
-              <%= form.check_box :allow_comments %>
+              <%= form.text_field :location, placeholder: "Add location", class: "form-control" %>
             </div>
 
-            <div>
-              <%= form.label :show_likes_count, style: "display: block" %>
-              <%= form.check_box :show_likes_count %>
+            <div class="form-check form-switch">
+              <%= form.check_box :allow_comments, class: "form-check-input", role: "switch" %>
+              <%= form.label :allow_comments, style: "display: block", class: "form-check-label" %>
+            </div>
+
+
+            <div class="form-check form-switch">
+              <%= form.check_box :show_likes_count, class: "form-check-input", role: "switch" %>
+              <%= form.label :show_likes_count, style: "display: block", class: "form-check-label" %>
             </div>
         </div>
         </div>
