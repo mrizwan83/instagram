@@ -1,7 +1,7 @@
 <%# added backend for turbo to likes controller to allow for replacement when it compares the sections and if has changed it will automaticaly replace and rerender without refreshing the page %>
 <%= turbo_frame_tag "post#{post.id}actions" do %>
     <div class="d-flex justify-content-start align-items-center gap-1 mb-3">
-        <%= button_to toggle_like_path(post_id: post.id), method: :post, style: "border:none; background:none" do %>
+        <%= button_to toggle_like_path(post_id: post.id), method: :post, style: "border:none; background:none", id: "post#{post.id}actions-likeBtn" do %>
         <i class="<%= post.likes.find_by(user: current_user) ? "fa-solid color-red" : "fa-regular" %> fa-heart fa-xl"></i>
         <% end %>
     </div>
