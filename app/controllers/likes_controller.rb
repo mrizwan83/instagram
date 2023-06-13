@@ -23,3 +23,8 @@ class LikesController < ApplicationController
         @post = Post.find(params[:post_id])
     end
 end
+
+# added backend for turbo to likes controller to allow for replacement 
+# when it compares the sections and if has changed it will automaticaly replace and rerender without refreshing the page
+# so if i want to make single page applications later i will need to use turbo stream to append/prepend or replace info within a tag specified by the id
+# along with turbo frame which will rerender without refreshing the page if something has changed
