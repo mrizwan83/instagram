@@ -18,9 +18,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+      <div class="d-flex flex-column gap-3">
        <%= post.likers.each do |liker| %>
-            <%= render 'posts/liker' %>
+            <%= render 'posts/liker', liker: liker %>
        <% end %>
+       </div>
       </div>
     </div>
   </div>
