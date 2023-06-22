@@ -21,4 +21,13 @@ class User < ApplicationRecord
 
         has_many :followers, through: :accepted_recieved_requests, source: :follower
         has_many :followings, through: :accepted_sent_requests, source: :followed
+
+# follow helper method current_user.follow(user)
+        def follow(user)
+          Follow.create(follower: self, followed: user)
+        end
+
+        def unfollow(user)
+          self.accepted_sent_requests.find_by(followed: user)&.destroy
+        end
 end
